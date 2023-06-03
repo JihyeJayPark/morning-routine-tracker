@@ -261,7 +261,7 @@ img {
   display: block;
 }
 
-.App {
+.landing {
   text-align: center;
   font-size: 125%;
 
@@ -287,7 +287,7 @@ p {
   
 }
 
-a {
+.tracker {
   font-family: 'Roboto Mono', monospace;
   font-size: 2rem;
   padding: 18px 36px;
@@ -301,7 +301,7 @@ a {
   }
 } */
 
-.App-header {
+.landing-header {
   background-image: url(./assets/Background\ img.jpg);
   background-size: cover;
   min-height: 100vh;
@@ -323,4 +323,11 @@ a {
   }
 } */
 
+footer {
+  font-size: 1rem;
+  .footer {
+    text-decoration: none;
+    
+  }
+}
 
