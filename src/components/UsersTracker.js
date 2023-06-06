@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { getDatabase, ref, onValue, push, remove } from 'firebase/database';
 import firebase from '../firebase';
 import ToggleSwitch from './ToggleSwitch';
+import Footer from './Footer';
 
 const UsersTracker = () => {
     const [routines, setRoutines] = useState([]);
@@ -52,13 +53,13 @@ const UsersTracker = () => {
     }
 
     return (
-        <div className="wrapper">
+        <div className="wrapper mainBox">
             <h2>What are your plans for this morning?</h2>
             <form action="submit">
-                <label htmlFor="newRoutine">Add a routine to your tracker</label>
                 <input 
                     type="text" 
                     id="newRoutine" 
+                    placeholder="Add a routine to your tracker"
                     onChange={handleInputChange} 
                     value={userInput}
                 />
@@ -76,7 +77,9 @@ const UsersTracker = () => {
                 })}
                 
             </ul>
+            <Footer />
         </div>
+        
         
     )
 }
