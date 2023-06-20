@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import { Link, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 // Import components for Routing
 import LandingPage from './components/LandingPage';
