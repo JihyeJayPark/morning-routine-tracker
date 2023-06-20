@@ -1,25 +1,20 @@
 import './App.css';
 import React from 'react';
 import { Link, Routes, Route } from 'react-router-dom';
+
+// Import components for Routing
+import LandingPage from './components/LandingPage';
 import UsersTracker from './components/UsersTracker';
+
 
 
 const App = () => {
   return (
     <div className="app">
-      <header className="header">
-        <div className="wrapper headerBox">
-          <h1>Morning Routine Tracker</h1>
-          <p>Are you ready for your morning?</p>
-          <Link to="/morning-routine-tracker" className="tracker">See your tracker!</Link>
-        </div>
-      </header>
-      <main>
-        <Routes>
-          <Route path="/morning-routine-tracker" element={<UsersTracker />} />
-        </Routes>
-      </main>
-      
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/tracker" element={<UsersTracker />} />
+      </Routes>  
     </div>
   );
 };

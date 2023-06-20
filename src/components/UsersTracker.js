@@ -1,4 +1,5 @@
 import '../App.css';
+// import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import { getDatabase, ref, onValue, push, remove } from 'firebase/database';
 import firebase from '../firebase';
@@ -53,30 +54,35 @@ const UsersTracker = () => {
     }
 
     return (
-        <div className="wrapper mainBox">
-            <h2>What are your plans for this morning?</h2>
-            <form action="submit">
-                <input 
-                    type="text" 
-                    id="newRoutine" 
-                    placeholder="Add a routine to your tracker"
-                    onChange={handleInputChange} 
-                    value={userInput}
-                />
-                <button onClick={handleSubmit}>Add Routine</button>
-            </form>
-            <ul>
-                {routines.map((routine) => {
-                    return (
-                        <li key={routine.key}>
-                            <p>{routine.name}</p>
-                            <ToggleSwitch />
-                            <button onClick={() => handleRemoveRoutine(routine.key)}>Remove</button>
-                        </li>
-                    )
-                })}
-                
-            </ul>
+        <div className="app">
+            <main className="main">
+                <div className="wrapper mainBox">
+                    <h2>What are your plans for this morning?</h2>
+                    <form action="submit">
+                        <input 
+                            type="text" 
+                            id="newRoutine" 
+                            placeholder="Add a routine to your tracker"
+                            onChange={handleInputChange} 
+                            value={userInput}
+                        />
+                        <button onClick={handleSubmit}>Add Routine</button>
+                    </form>
+                    <ul>
+                        {routines.map((routine) => {
+                            return (
+                                <li key={routine.key}>
+                                    <p>{routine.name}</p>
+                                    <ToggleSwitch />
+                                    <button onClick={() => handleRemoveRoutine(routine.key)}>Remove</button>
+                                </li>
+                            )
+                        })}
+                        
+                    </ul>
+                    
+                </div>
+            </main>
             <Footer />
         </div>
         
